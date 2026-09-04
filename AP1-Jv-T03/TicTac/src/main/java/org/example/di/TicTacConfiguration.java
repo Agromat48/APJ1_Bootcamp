@@ -4,7 +4,7 @@ import org.example.datasource.mapper.DataGameMapper;
 import org.example.web.mapper.WebGameMapper;
 import org.example.datasource.repository.GameRepository;
 import org.example.datasource.repository.GameStorage;
-import org.example.datasource.service.GameServiceImpl;
+import org.example.domain.service.GameServiceImpl;
 import org.example.domain.service.GameService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

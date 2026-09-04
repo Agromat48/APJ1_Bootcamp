@@ -1,4 +1,4 @@
-package org.example.datasource.service;
+package org.example.domain.service;
 
 import org.example.datasource.mapper.DataGameMapper;
 import org.example.datasource.model.DataGame;
@@ -7,7 +7,6 @@ import org.example.domain.exception.InvalidMoveException;
 import org.example.domain.model.Game;
 import org.example.domain.model.GameField;
 import org.example.domain.model.GameResult;
-import org.example.domain.service.GameService;
 
 public class GameServiceImpl implements GameService {
     private final GameRepository gameRepository;
@@ -19,11 +18,7 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public Game makeNextMove(Game game) {
-        return makeNextMove(game, -1);
-    }
-
-    private Game makeNextMove(Game game, int computerMark) {
+    public Game makeNextMove(Game game, int computerMark) {
         int[][] matrix = copyMatrix(game.getGameField().getMatrix());
 
         int bestScore = Integer.MIN_VALUE;
@@ -115,7 +110,7 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public GameResult   getWinner(Game game) {
+    public GameResult getWinner(Game game) {
         return getWinner(game.getGameField().getMatrix());
     }
 
